@@ -1,0 +1,33 @@
+
+/* popupmenu 内容部分の背景 (プリファレンス等) */
+
+:local(.hoverContent) {
+  background-color: #063868;
+  padding: 0px !important;
+}
+
+:local(.hoverContentItem) {
+  padding: 0px;
+  color: #fff;
+  /*
+  height: 0px;
+  margin: 0px;
+  color: #fff;
+  border-bottom: 3px solid #406d92;
+  */
+}
+
+/*
+:local(.hoverContentItem:hover) {
+  background-color: #042a55;
+}
+*/
+
+:local(.popup) {
+  background-color: #063868;
+}
+
+:local(.popup:before) {
+  background-color: #063868 !important;
+}
+
