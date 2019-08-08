@@ -1,0 +1,82 @@
+import React from 'react'
+import _ from 'lodash';
+import { Header, Button, Popup, Grid } from 'semantic-ui-react'
+
+const SubPopup = (props) => {
+  const gridItems = _.map(props.items, (item) => {
+    return (
+      <Grid.Row>
+        <Grid.Column
+          textAlign='left'>
+          <b>{item}</b>
+        </Grid.Column>
+      </Grid.Row>
+    );
+  });
+
+  return (
+  <Popup
+    trigger={<b>{props.name}</b>}
+    hoverable
+    position='right center'
+    >
+    <Grid rows='equal' divided='vertically'>
+      {gridItems}
+    </Grid>
+  </Popup>
+  );
+}
+
+const general_setting_items = [
+  'Accounts',
+  'General Preference',
+  'Available Devices and Data',
+  'Available Apps',
+];
+
+const service_items = [
+  'Health Care',
+  'Smart Home',
+  'Connected Car',
+];
+
+const PopupExampleFlowing = (props) => {
+  //const item_name = props.name;
+  //const trigger_name= (
+  //  <b>{props.name}</b>
+  //);
+
+  // 1level pop upのitem
+  const gridItems = _.map(general_setting_items, (item) => {
+    return (
+      <Grid.Row>
+      <Grid.Column
+        textAlign='left'>
+        <b> Test Item </b>
+        /*
+        <SubPopup
+          name={item}
+          items={service_items}
+        />
+        */
+      </Grid.Column>
+      </Grid.Row>
+    );
+  });
+
+  return (
+    <Popup
+      //trigger={item_name}
+      trigger='item_name_test'
+      hoverable
+      position='right center'
+      >
+      <Grid rows='true' divided='vertically'>
+        {gridItems}
+      </Grid>
+    </Popup>
+  );
+}
+
+export default PopupExampleFlowing
+
